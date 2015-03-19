@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		41AD2C4E1ABB5F3D00E3E03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C4D1ABB5F3D00E3E03D /* AppDelegate.swift */; };
 		41AD2C511ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C4F1ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld */; };
-		41AD2C531ABB5F3D00E3E03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C521ABB5F3D00E3E03D /* ViewController.swift */; };
 		41AD2C561ABB5F3D00E3E03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD2C541ABB5F3D00E3E03D /* Main.storyboard */; };
 		41AD2C581ABB5F3D00E3E03D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AD2C571ABB5F3D00E3E03D /* Images.xcassets */; };
 		41AD2C5B1ABB5F3D00E3E03D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41AD2C591ABB5F3D00E3E03D /* LaunchScreen.xib */; };
 		41AD2C671ABB5F3D00E3E03D /* ExchangeAGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C661ABB5F3D00E3E03D /* ExchangeAGramTests.swift */; };
+		41AD2C711ABB637B00E3E03D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C701ABB637B00E3E03D /* FeedViewController.swift */; };
+		41AD2C731ABB684300E3E03D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C721ABB684300E3E03D /* FeedCell.swift */; };
+		41AD2C751ABB6B1500E3E03D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AD2C741ABB6B1500E3E03D /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +33,15 @@
 		41AD2C4C1ABB5F3D00E3E03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AD2C4D1ABB5F3D00E3E03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AD2C501ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeAGram.xcdatamodel; sourceTree = "<group>"; };
-		41AD2C521ABB5F3D00E3E03D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41AD2C551ABB5F3D00E3E03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41AD2C571ABB5F3D00E3E03D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41AD2C5A1ABB5F3D00E3E03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		41AD2C601ABB5F3D00E3E03D /* ExchangeAGramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeAGramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD2C651ABB5F3D00E3E03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AD2C661ABB5F3D00E3E03D /* ExchangeAGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAGramTests.swift; sourceTree = "<group>"; };
+		41AD2C701ABB637B00E3E03D /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = ../FeedViewController.swift; sourceTree = "<group>"; };
+		41AD2C721ABB684300E3E03D /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		41AD2C741ABB6B1500E3E03D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AD2C751ABB6B1500E3E03D /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +84,9 @@
 		41AD2C4A1ABB5F3D00E3E03D /* ExchangeAGram */ = {
 			isa = PBXGroup;
 			children = (
+				41AD2C701ABB637B00E3E03D /* FeedViewController.swift */,
+				41AD2C721ABB684300E3E03D /* FeedCell.swift */,
 				41AD2C4D1ABB5F3D00E3E03D /* AppDelegate.swift */,
-				41AD2C521ABB5F3D00E3E03D /* ViewController.swift */,
 				41AD2C541ABB5F3D00E3E03D /* Main.storyboard */,
 				41AD2C571ABB5F3D00E3E03D /* Images.xcassets */,
 				41AD2C591ABB5F3D00E3E03D /* LaunchScreen.xib */,
@@ -93,6 +99,7 @@
 		41AD2C4B1ABB5F3D00E3E03D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41AD2C741ABB6B1500E3E03D /* MobileCoreServices.framework */,
 				41AD2C4C1ABB5F3D00E3E03D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,8 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41AD2C531ABB5F3D00E3E03D /* ViewController.swift in Sources */,
 				41AD2C4E1ABB5F3D00E3E03D /* AppDelegate.swift in Sources */,
+				41AD2C731ABB684300E3E03D /* FeedCell.swift in Sources */,
+				41AD2C711ABB637B00E3E03D /* FeedViewController.swift in Sources */,
 				41AD2C511ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

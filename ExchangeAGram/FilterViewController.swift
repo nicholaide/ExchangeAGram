@@ -15,6 +15,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     let kIntensity = 0.7
     var context:CIContext = CIContext(options: nil)
     var filters:[CIFilter] = []
+    let placeHolderImage = UIImage(named: "Placeholder")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,18 +51,23 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
         
-        cell.imageView.image = UIImage(named: "Placeholder")
-        
-        //Note: do UI changes on main thread, not on background threads
-        
-        let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
-        dispatch_async(filterQueue, { () -> Void in
-            let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
-            //the thread is done at this point
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                cell.imageView.image = filterImage
+        //prevents reloading of images when scrolling through the filter page
+        if cell.imageView.image == nil {
+            cell.imageView.image = placeHolderImage
+            
+            //Note: do UI changes on main thread, not on background threads
+            
+            let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
+            dispatch_async(filterQueue, { () -> Void in
+                let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbNail, filter: self.filters[indexPath.row])
+                //the thread is done at this point
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    cell.imageView.image = filterImage
+                })
             })
-        })
+        }
+        
+  
         return cell
         
     }

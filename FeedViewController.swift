@@ -127,5 +127,19 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
 
     }
+    
+    //UICollectionViewDelegate
+    
+    //what image or item did we tap?
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let thisItem = feedArray[indexPath.row] as FeedItem
+        
+        var filterVC = FilterViewController()
+        filterVC.thisFeedItem = thisItem
+        
+        //optional because you might not be inside navigation controller
+        self.navigationController?.pushViewController(filterVC, animated: false)
+    }
+    
 
 }

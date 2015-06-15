@@ -144,21 +144,19 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
             textField.secureTextEntry = false
         }
         
-        var text:String
         let textField = alert.textFields![0] as! UITextField
-        
-        if textField.text != nil {
-            text = textField.text
-        }
         
         let photoAction = UIAlertAction(title: "Post Photo to Facebook with Caption", style: UIAlertActionStyle.Destructive) { (UIAlertAction) -> Void in
             //need self here bec we are inside closure
-            self.saveFilterToCoreData(indexPath)
+            self.shareToFacebook(indexPath)
+            var text = textField.text
+            self.saveFilterToCoreData(indexPath, caption: text)
         }
         alert.addAction(photoAction)
         
         let saveFilterAction = UIAlertAction(title: "Save Filter without posting on Facebook", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-            self.saveFilterToCoreData(indexPath)
+             var text = textField.text
+            self.saveFilterToCoreData(indexPath, caption: text)
         }
         alert.addAction(saveFilterAction)
         
@@ -171,16 +169,36 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
-    func saveFilterToCoreData (indexPath: NSIndexPath) {
+    func saveFilterToCoreData (indexPath: NSIndexPath, caption: String) {
         let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
         let imageData = UIImageJPEGRepresentation(filterImage, 1.0)
         self.thisFeedItem.image = imageData
         let thumbNailData = UIImageJPEGRepresentation(filterImage, 0.1)
         self.thisFeedItem.thumbNail = thumbNailData
+        self.thisFeedItem.caption = caption
         (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         self.navigationController?.popViewControllerAnimated(true)
 
     }
+    
+    
+    func shareToFacebook (indexPath: NSIndexPath) {
+        let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
+        
+        //this is obj-c because FB API expects this
+        let photos:NSArray = [filterImage] as NSArray
+        var params = FBPhotoParams()
+        params.photos = photos as [AnyObject]
+        FBDialogs.presentShareDialogWithPhotoParams(params, clientState: nil) { (call, result, error) -> Void in
+            if (result != nil) {
+                println(result)
+            } else {
+                println(error)
+            }
+        }
+    }
+            
+    
     
     //caching functions
     //imageNumber is just indexPath.row

@@ -50,7 +50,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
+        let cell:FilterCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as! FilterCell
         
 
         cell.imageView.image = placeHolderImage
@@ -145,7 +145,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
         var text:String
-        let textField = alert.textFields![0] as UITextField
+        let textField = alert.textFields![0] as! UITextField
         
         if textField.text != nil {
             text = textField.text
@@ -177,7 +177,7 @@ class FilterViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.thisFeedItem.image = imageData
         let thumbNailData = UIImageJPEGRepresentation(filterImage, 0.1)
         self.thisFeedItem.thumbNail = thumbNailData
-        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+        (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
         self.navigationController?.popViewControllerAnimated(true)
 
     }

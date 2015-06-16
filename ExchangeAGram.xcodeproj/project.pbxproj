@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		411E77BC1B2F601F00B05218 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E77BB1B2F601F00B05218 /* MapViewController.swift */; };
 		411E77BE1B2F65CA00B05218 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411E77BD1B2F65CA00B05218 /* MapKit.framework */; };
-		411E77C01B2F787A00B05218 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E77BF1B2F787A00B05218 /* FeedItem.swift */; };
+		411E77C21B307CDF00B05218 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411E77C11B307CDF00B05218 /* FeedItem.swift */; };
 		41AD2C4E1ABB5F3D00E3E03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C4D1ABB5F3D00E3E03D /* AppDelegate.swift */; };
 		41AD2C511ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41AD2C4F1ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld */; };
 		41AD2C561ABB5F3D00E3E03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD2C541ABB5F3D00E3E03D /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		411E77BB1B2F601F00B05218 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		411E77BD1B2F65CA00B05218 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		411E77BF1B2F787A00B05218 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		411E77C11B307CDF00B05218 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ../FeedItem.swift; sourceTree = "<group>"; };
 		41609B491AC4976C00128C45 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		41AD2C481ABB5F3D00E3E03D /* ExchangeAGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeAGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD2C4C1ABB5F3D00E3E03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +83,6 @@
 		41AD2C3F1ABB5F3D00E3E03D = {
 			isa = PBXGroup;
 			children = (
-				411E77BF1B2F787A00B05218 /* FeedItem.swift */,
 				41AD2C4A1ABB5F3D00E3E03D /* ExchangeAGram */,
 				41AD2C631ABB5F3D00E3E03D /* ExchangeAGramTests */,
 				41AD2C491ABB5F3D00E3E03D /* Products */,
@@ -150,6 +149,7 @@
 		41AD2C7E1AC07A9100E3E03D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				411E77C11B307CDF00B05218 /* FeedItem.swift */,
 				41AD2C4F1ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld */,
 			);
 			name = Model;
@@ -260,7 +260,7 @@
 				41AD2C4E1ABB5F3D00E3E03D /* AppDelegate.swift in Sources */,
 				41AD2C731ABB684300E3E03D /* FeedCell.swift in Sources */,
 				411E77BC1B2F601F00B05218 /* MapViewController.swift in Sources */,
-				411E77C01B2F787A00B05218 /* FeedItem.swift in Sources */,
+				411E77C21B307CDF00B05218 /* FeedItem.swift in Sources */,
 				41AD2C711ABB637B00E3E03D /* FeedViewController.swift in Sources */,
 				41AD2C801AC1C80700E3E03D /* ProfileViewController.swift in Sources */,
 				41AD2C511ABB5F3D00E3E03D /* ExchangeAGram.xcdatamodeld in Sources */,
